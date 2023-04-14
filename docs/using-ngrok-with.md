@@ -15,12 +15,14 @@ Here you will find notes on using ngrok with particular technologies. Think we'r
 | [Go](/using-ngrok-with/go) | Run ngrok programmatically with the ngrok-go library |
 | [gRPC](/using-ngrok-with/gRPC) | ngrok TCP tunnels work great with gRPC |
 | [Java](/using-ngrok-with/java) | Learn how to integrate with your Java projects |
+| [Kubernetes](/using-ngrok-with/k8s) | Add public and secure ingress traffic to your k8s services with the ngrok Ingress Controller for Kubernetes |
 | [Minecraft](/using-ngrok-with/minecraft) | ngrok can help you and your friends connect for online gaming |
 | [NGINX](/using-ngrok-with/nginx) | Learn how to configure ngrok when using it with NGINX |
 | [Node (npm, node.js)](/using-ngrok-with/node-js) | Work with the ngrok agent from your Node application |
 | [An outbound proxy](/using-ngrok-with/outboundProxy) | Use ngrok through an HTTP or SOCKS5 proxy |
 | [Puppet](/using-ngrok-with/puppet) | Manage the ngrok Agent using Puppet |
 | [Python](/using-ngrok-with/python) | Learn how to integrate with your Python application |
+| [Rust](/using-ngrok-with/rust) | Run ngrok programmatically with the ngrok-rs crate |
 | [SSH](/using-ngrok-with/ssh) | Learn how to SSH to a machine from anywhere in the world |
 | [Virtual hosts (MAMP, WAMP, etc.)](/using-ngrok-with/virtualHosts) | Rewrite the host header for forwarding to virtual hosts |
 | [Visual Studio](/using-ngrok-with/visualStudio) | Leverage ngrok when working in Visual Studio |

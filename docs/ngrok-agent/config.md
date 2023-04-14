@@ -55,7 +55,7 @@ The following is a list of options that can be configured at the root of your co
 
 ### `api_key`
 
-This option specifies the API key used to access the ngrok API through the [`ngrok api`](ngrok#ngrok-api) command. This is only needed when using the [ngrok API](/api) and not the local ngrok agent API (available at `localhost:4040/api`). You can generate an API Key in the [ngrok Dashboard](https://dashboard.ngrok.com/api) and install it using the `ngrok config add-api-key` command.
+This option specifies the API key used to access the ngrok API through the [`ngrok api`](/docs/ngrok-agent/ngrok#ngrok-api) command. This is only needed when using the [ngrok API](/api) and not the local ngrok agent API (available at `localhost:4040/api`). You can generate an API Key in the [ngrok Dashboard](https://dashboard.ngrok.com/api) and install it using the `ngrok config add-api-key` command.
 
 ##### ngrok.yml specifying an API key
 
@@ -157,15 +157,15 @@ This is the URL of an HTTP or SOCKS5 proxy to use for establishing the tunnel co
 
 This is the region where the ngrok agent will connect to. You can only choose one region per agent session. Choosing the region closest to you usually improves latency and performance. By default, the ngrok agent attempts to choose the best region for you.
 
-|     |     |     |
-| --- | --- | --- |
-| `us` |     | United States |
-| `eu` |     | Europe |
-| `ap` |     | Asia/Pacific |
-| `au` |     | Australia |
-| `sa` |     | South America |
-| `jp` |     | Japan |
-| `in` |     | India |
+| Region Code | Region Name |
+| ---- | --- |
+| `us` | United States |
+| `eu` | Europe |
+| `ap` | Asia/Pacific |
+| `au` | Australia |
+| `sa` | South America |
+| `jp` | Japan |
+| `in` | India |
 
 ### `remote_management`
 

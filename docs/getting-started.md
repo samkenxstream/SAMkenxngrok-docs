@@ -30,7 +30,7 @@ You should see `Hello, World!` in your browser. If you have any trouble getting 
 
 Unfortunately, this service is only available on your local machine for now. Now let's use ngrok to securely share it with the world. For the rest of this guide, we will assume we're working with a web service running at http://localhost:8000 but you should adjust the following commands to match your configuration.
 
-![](https://www.ngrok.com/static/img/docs/localhost-8000.png)
+![](https://ngrok.com/static/img/docs/localhost-8000.png)
 
 ### Step 2: Install the ngrok Agent
 
@@ -67,36 +67,36 @@ If you don't have one of these package managers installed or prefer to install t
 You can test everything is working by running `ngrok -h` which should print the help text for the ngrok agent.
 
 ```
-    $ ngrok -h
+    $ ngrok -h                                                                                                                                                                                                                  
     NAME:
       ngrok - tunnel local ports to public URLs and inspect traffic
-    
+
     USAGE:
       ngrok [command] [flags]
-    
-    DESCRIPTION:
+
+    DESCRIPTION: 
       ngrok exposes local networked services behinds NATs and firewalls to the
       public internet over a secure tunnel. Share local websites, build/test
       webhook consumers and self-host personal services.
       Detailed help for each command is available with 'ngrok help <command>'.
       Open http://localhost:4040 for ngrok's web interface to inspect traffic.
-    
+
     Author:
       ngrok - <support@ngrok.com>
-    
+
     TERMS OF SERVICE: https://ngrok.com/tos
-    
-    EXAMPLES:
-      ngrok http 80                    # secure public URL for port 80 web server
-      ngrok http --subdomain=baz 8080  # port 8080 available at baz.ngrok.io
-      ngrok http foo.dev:80            # tunnel to host:port instead of localhost
-      ngrok http https://localhost     # expose a local https server
-      ngrok tcp 22                     # tunnel arbitrary TCP traffic to port 22
-      ngrok tls --hostname=foo.com 443 # TLS traffic for foo.com to port 443
-      ngrok start foo bar baz          # start tunnels from the configuration file
-    
+
+    EXAMPLES: 
+      ngrok http 80                           # secure public URL for port 80 web server
+      ngrok http --domain baz.ngrok.dev 8080  # port 8080 available at baz.ngrok.dev
+      ngrok http foo.dev:80                   # tunnel to host:port instead of localhost
+      ngrok http https://localhost            # expose a local https server
+      ngrok tcp 22                            # tunnel arbitrary TCP traffic to port 22
+      ngrok tls --domain=foo.com 443          # TLS traffic for foo.com to port 443
+      ngrok start foo bar baz                 # start tunnels from the configuration file
+
     COMMANDS:
-      api                            use ngrok Agent as an api client
+      api                            use ngrok agent as an api client
       completion                     generates shell completion code for bash or zsh
       config                         update or migrate ngrok's configuration file
       credits                        prints author and licensing information
@@ -110,10 +110,11 @@ You can test everything is working by running `ngrok -h` which should print the 
       tunnel                         start a tunnel for use with a tunnel-group backend
       update                         update ngrok to the latest version
       version                        print the version string
-    
+
     OPTIONS:
-      -h, --help      help for ngrok
-      -v, --version   version for ngrok
+          --config strings   path to config files; they are merged if multiple
+      -h, --help             help for ngrok
+      -v, --version          version for ngrok
   ```
 
 ### Step 3: Connect your agent to your ngrok account
@@ -143,9 +144,9 @@ You should see something similar to the following console UI in your terminal.
     Account                       inconshreveable (Plan: Free)
     Version                       3.0.0
     Region                        United States (us)
-    Latency                       78.006541ms
+    Latency                       78ms
     Web Interface                 http://127.0.0.1:4040
-    Forwarding                    https://84c5df439d74.ngrok.io -> http://localhost:8000
+    Forwarding                    https://84c5df439d74.ngrok-free.dev -> http://localhost:8000
     
     Connections                   ttl     opn     rt1     rt5     p50     p90
                                   0       0       0.00    0.00    0.00    0.00
@@ -172,7 +173,7 @@ Now when you access the new ngrok URL in your browser, you should be prompted fo
 
 By the way, if you have a paid plan and want to keep the same URL each time you restart, use the [`--subdomain`](/ngrok-agent/ngrok#ngrok-http-flags) flag when starting the agent.
 
-![](https://www.ngrok.com/static/img/docs/ngrok-basic-auth.png)
+![](https://ngrok.com/static/img/docs/ngrok-basic-auth.png)
 
 You now have a public URL for your web service secured by a username and password, still without modifying your web service.
 
@@ -190,7 +191,7 @@ If you have a paid plan, you can explicitly specify the email addresses to allow
 
 Now when you try to visit your new ngrok URL, you will be prompted to log in with your Google account (you can open in incognito to be sure). Again, this is without modifying your web service.
 
-![](https://www.ngrok.com/static/img/docs/ngrok-oauth.png)
+![](https://ngrok.com/static/img/docs/ngrok-oauth.png)
 
 ### Next steps
 

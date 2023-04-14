@@ -1,3 +1,7 @@
+---
+description: Use JumpCloud SAML to secure access to ngrok tunnels
+---
+
 # JumpCloud SSO (SAML)
 ------------
 
@@ -22,7 +26,7 @@ By integrating JumpCloud SSO with ngrok, you can:
 To configure ngrok tunnels with JumpCloud, you must have:
 
 - an JumpCloud account with administrative rights to create apps
-- an ngrok enterprise account with an access token or admin access to configure edges with SAML.
+- an [ngrok Enterprise Account](https://ngrok.com/pricing) with an authtoken or admin access to configure edges with SAML.
 
 
 ## Configuration Steps
@@ -40,7 +44,7 @@ To integrate ngrok with JumpCloud SSO, you will need to:
 
 1. On the **New Application** popup, enter `ngrok saml` in the **Display Label** field.
 
-1. Click the **SSO** tab, enter `https://ngrok-jumpcloud` in the **IdP Entity ID** field,  enter temporary values (i.e., `https://temporary`) in both the **SP Entity ID** and the **ACS URL** fields, and then click **activate**.
+1. Click the **SSO** tab, enter `https://ngrok-jumpcloud` in the **IdP Entity ID** field, enter temporary values (i.e., `https://temporary`) in both the **SP Entity ID** and the **ACS URL** fields, and then click **activate**.
 
 
 ### **Step 2**: Download the IdP metadata {#idp-metadata}

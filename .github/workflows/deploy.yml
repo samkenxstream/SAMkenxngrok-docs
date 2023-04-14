@@ -9,19 +9,27 @@ jobs:
     name: Deploy ngrok docs
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: yarn
+          cache: 'pnpm'
+
+      - name: 'Create env file'
+        run: |
+          echo DEPLOY_ENV=prod > .env
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
       - name: Build website
-        run: yarn build
-          
+        run: pnpm run build
+
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -29,6 +37,19 @@ jobs:
 
       - name: Deploy
         run: |
-          aws s3 sync ./build s3://docs-s3.dev-ngrok.com --acl bucket-owner-full-control
-          aws s3 sync ./build s3://docs-s3.stage-ngrok.com --acl bucket-owner-full-control 
-          aws s3 sync ./build s3://docs-s3.ngrok.com --acl bucket-owner-full-control
+          aws s3 sync ./build s3://docs-s3.dev-ngrok.com/docs --acl public-read
+          aws s3 sync ./build s3://docs-s3.stage-ngrok.com/docs --acl public-read
+          aws s3 sync ./build s3://docs-s3.ngrok.com/docs --acl public-read
+  search-index-prod:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run algolia/docsearch-scraper
+        run: |
+          docker pull algolia/docsearch-scraper
+          docker run \
+            -e ALGOLIA_APP_ID=${{ secrets.DEV_ALGOLIA_APPLICATION_ID }} \
+            -e API_KEY=${{ secrets.DEV_ALGOLIA_API_KEY }} \
+            -e "CONFIG=$(cat ./algolia_prod.config.json | jq -r tostring)" \
+            algolia/docsearch-scraper

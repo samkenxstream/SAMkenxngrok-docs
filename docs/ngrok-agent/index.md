@@ -26,7 +26,7 @@ There's a whole lot more to discover in the new ngrok agent v3. This [upgrade gu
 
 See our [ngrok downloads](https://ngrok.com/download) page for instructions on installing the ngrok agent on your system.
 
-The ngrok agent is most likely included in your favorite package manager (and if it's not, [let us know!](mailto:support@ngrok.com?subject=Request to add the ngrok agent to a new package manager)).
+The ngrok agent is most likely included in your favorite package manager (and if it's not, [let us know!](mailto:support@ngrok.com?subject=Request+to+add+the+ngrok+agent+to+a+new+package+manager)).
 
 ### Install your authtoken
 
@@ -50,9 +50,10 @@ After that, you will be able to see the available options by pressing tab after 
 
 ### Supported ENV Variables
 
-The ngrok agent supports an environment variable for the authtoken. You may use it instead if that's easier in your environment.
+The ngrok agent supports environment variables as well for the authtoken and API key. You may use them instead if that's easier in your environment.
 
 *   `NGROK_AUTHTOKEN` - For more information about authtokens, see the [ngrok secure tunnels documentation](/secure-tunnels/ngrok-agent/tunnel-authtokens).
+*   `NGROK_API_KEY` - For more information, see the [ngrok API documentation](/api#authentication).
 
 ### Examples
 

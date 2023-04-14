@@ -1,3 +1,7 @@
+---
+description: Develop and test GitHub webhooks from localhost
+---
+
 # GitHub Repository Webhooks
 ------------
 
@@ -7,7 +11,7 @@ To integrate GitHub webhooks with ngrok:
 1. [Launch your local webhook.](#start-your-app) `npm start`
 1. [Launch ngrok.](#start-ngrok) `ngrok http 3000`
 1. [Configure GitHub webhook with your ngrok URL.](#setup-webhook)
-1. **Bonus!** [Use ngrok like a PRO.](#security)
+1. [Secure your webhook requests with verification.](#security)
 
 :::
 
@@ -135,20 +139,20 @@ The ngrok Request Inspector provides a replay function that you can use to test 
 
 1. Click **Replay** to execute the same request to your application or select **Replay with modifications** to modify the content of the original request before sending the request.
 
-1. If you choose to **Replay with modifications**, you can modify any content from the original request. Optionally, modify the request header with different content. For example, modify the **X-Github-Event** header with the value **MyCustomPush**.
+1. If you choose to **Replay with modifications**, you can modify any content from the original request. Optionally, modify the request header with different content. For example, modify the **X-GitHub-Event** header with the value **MyCustomPush**.
 
-1. If you choose to **Replay with modifications**, you can modify any content from the original request. For example, you can modify the **X-Github-Event** header field with the value `MyCustomPush`.
+1. If you choose to **Replay with modifications**, you can modify any content from the original request. For example, you can modify the **X-GitHub-Event** header field with the value `MyCustomPush`.
 
 1. Click **Replay**.
 
 Verify that your local application receives the request and logs the corresponding information to the terminal.
 
 
-## **Bonus**: Secure webhook requests {#security}
+## Secure webhook requests {#security}
 
 The ngrok signature webhook verification feature allows ngrok to assert that requests from your GitHub webhook are the only traffic allowed to make calls to your localhost app.
 
-**Note:** This ngrok feature requires a Pro or Enterprise license.
+**Note:** This ngrok feature is limited to 500 validations per month on free ngrok accounts. For unlimited, upgrade to Pro or Enterprise.
 
 This is a quick step to add extra protection to your application.
 
